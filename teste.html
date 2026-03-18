@@ -31,7 +31,9 @@
       align-items: center;
       min-height: 100vh;
       color: var(--text-color);
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 20px 0;
       perspective: 1000px;
     }
 
@@ -68,20 +70,30 @@
       -webkit-backdrop-filter: blur(15px);
       border: 1px solid var(--glass-border);
       border-radius: 30px;
-      padding: 40px;
+      padding: 30px 20px;
       max-width: 500px;
       width: 90%;
       text-align: center;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
       z-index: 10;
       animation: fadeIn 1.5s ease-out;
+      margin: 20px auto;
     }
 
     h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 3.5rem;
+      font-size: 2.8rem;
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 600px) {
+      .glass-card {
+        padding: 40px;
+      }
+      h1 {
+        font-size: 3.5rem;
+      }
     }
 
     p {
@@ -224,19 +236,18 @@
       <div class="bonus-surpresas" id="bonus">
         <div class="fact-card">✨ Motivo #1: Seu sorriso ilumina todo o meu dia.</div>
         <div class="fact-card">✨ Motivo #2: Amo o jeito que você me faz sentir especial.</div>
-        <div class="fact-card">✨ Motivo #3: Mal posso esperar pelos próximos mil meses.</div>
+        <div class="fact-card">✨ Motivo #3: Amo seus olhos e a forma como eles brilham.</div>
+        <div class="fact-card">✨ Motivo #4: Mal posso esperar pelos próximos mil meses.</div>
       </div>
 
-      <p style="margin-top:20px; font-weight:700;">Eu te amo daqui até a lua! 🌙✨</p>
+      <p style="margin-top:20px; font-weight:700;">Eu te amo muito, você é a melhor coisa que já me aconteceu! ❤️</p>
     </div>
   </div>
 
   <script>
     // Constants
     const messages = [
-      "Eu te amo mais do que as palavras podem descrever...",
-      "Você é o meu 'bug' favorito em um mundo de códigos perfeitos.",
-      "Obrigado por ser meu porto seguro e minha melhor aventura."
+      "Eu te amo mais do que qualquer linha de código possa descrever..."
     ];
 
     // Falling Hearts Logic
