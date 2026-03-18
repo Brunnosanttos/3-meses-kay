@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossos 3 Meses ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-pink: #ff758c;
+      --secondary-pink: #ff7eb3;
+      --glass-bg: rgba(255, 255, 255, 0.15);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --text-color: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: var(--text-color);
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    /* Falling Hearts Background */
+    .hearts-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart-flake {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.5rem;
+      user-select: none;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Main Container */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+      border-radius: 30px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .highlight {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Secret Button */
+    .btn-surprise {
+      background: #fff;
+      color: var(--primary-pink);
+      border: none;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+    }
+
+    .btn-surprise:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      background: #fffafa;
+    }
+
+    /* Surprise Content Area */
+    #surprise {
+      display: none;
+      margin-top: 30px;
+      border-top: 1px solid var(--glass-border);
+      padding-top: 30px;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    .love-meter {
+      width: 100%;
+      height: 25px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .love-progress {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #ff9a9e, #fecfef);
+      transition: width 2s ease-in-out;
+      border-radius: 12px;
+    }
+
+    .meter-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .typewriter-text {
+      font-style: italic;
+      min-height: 2.5em;
+    }
+
+    .bonus-surpresas {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .fact-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 15px;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating Icons */
+    .icon-float {
+      display: inline-block;
+      animation: heartBeat 1.5s infinite;
+    }
+
+    @keyframes heartBeat {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.1); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.1); }
+      70% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts-container" id="hearts"></div>
+
+  <div class="glass-card">
+    <h1>Feliz 3 Meses! <span class="icon-float">❤️</span></h1>
+    <p>
+      Hoje comemoramos <span class="highlight">90 dias</span> de uma história que está apenas começando. Cada segundo ao seu lado é um presente que eu guardo com todo carinho.
+    </p>
+    <p>
+      Você é minha inspiração diária, a dona dos meus melhores sorrisos e quem faz meu coração bater mais forte.
+    </p>
+    
+    <button class="btn-surprise" id="revealBtn" onclick="revealSurprise()">Pressione para a surpresa ✨</button>
+
+    <div id="surprise">
+      <p class="typewriter-text" id="typewriter"></p>
+      
+      <div class="love-meter">
+        <div class="love-progress" id="progress"></div>
+        <div class="meter-label">MEDIDOR DE AMOR: <span id="percent">0%</span></div>
+      </div>
+
+      <div class="bonus-surpresas" id="bonus">
+        <div class="fact-card">✨ Motivo #1: Seu sorriso ilumina todo o meu dia.</div>
+        <div class="fact-card">✨ Motivo #2: Amo o jeito que você me faz sentir especial.</div>
+        <div class="fact-card">✨ Motivo #3: Mal posso esperar pelos próximos mil meses.</div>
+      </div>
+
+      <p style="margin-top:20px; font-weight:700;">Eu te amo daqui até a lua! 🌙✨</p>
+    </div>
+  </div>
+
+  <script>
+    // Constants
+    const messages = [
+      "Eu te amo mais do que as palavras podem descrever...",
+      "Você é o meu 'bug' favorito em um mundo de códigos perfeitos.",
+      "Obrigado por ser meu porto seguro e minha melhor aventura."
+    ];
+
+    // Falling Hearts Logic
+    function createHeart() {
+      const container = document.getElementById('hearts');
+      const heart = document.createElement('div');
+      heart.classList.add('heart-flake');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+      heart.style.opacity = Math.random();
+      heart.style.fontSize = Math.random() * 10 + 15 + 'px';
+      
+      container.appendChild(heart);
+      
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+
+    // Surprise Reveal Logic
+    let revealed = false;
+    function revealSurprise() {
+      if(revealed) return;
+      revealed = true;
+      
+      const surprise = document.getElementById('surprise');
+      const btn = document.getElementById('revealBtn');
+      const progress = document.getElementById('progress');
+      const percentLabel = document.getElementById('percent');
+      
+      btn.style.display = 'none';
+      surprise.style.display = 'block';
+
+      // Typewriter effect
+      let message = messages[Math.floor(Math.random() * messages.length)];
+      let i = 0;
+      function type() {
+        if (i < message.length) {
+          document.getElementById('typewriter').innerHTML += message.charAt(i);
+          i++;
+          setTimeout(type, 50);
+        }
+      }
+      type();
+
+      // Fun progress bar
+      let count = 0;
+      let interval = setInterval(() => {
+        count++;
+        progress.style.width = count + '%';
+        percentLabel.innerText = count + '%';
+        if(count >= 100) {
+          clearInterval(interval);
+          percentLabel.innerText = "∞%";
+          progress.style.width = '100%';
+        }
+      }, 20);
+    }
+  </script>
+</body>
+</html>
+
